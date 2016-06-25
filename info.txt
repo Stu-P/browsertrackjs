@@ -1,0 +1,26 @@
+mongo lab: https://mlab.com/signup/
+
+http://runnable.com/product.html
+https://www.openshift.com/app/account/new
+
+
+https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs/
+http://thejackalofjavascript.com/nodejs-restify-mongolab-build-rest-api/
+
+
+
+mLab: 
+
+mongo shell:
+mongo ds023704.mlab.com:23704/browsertrack -u dbuser -p "(*YH(OJH32"
+
+
+DB:
+  mongodb://dbuser:(*YH(OJH32@ds023704.mlab.com:23704/browsertrack
+
+dbuser
+(*YH(OJH32
+
+mongoimport -h ds023704.mlab.com:23704 -d browsertrack -c versionchanges -u dbuser -p "(*YH(OJH32" --file "../versionChanges.json"
+
+mongoimport -h ds023704.mlab.com:23704 -d browsertrack -c browsers -u dbuser -p "(*YH(OJH32" --file "../browsers.json"
