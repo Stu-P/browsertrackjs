@@ -7,12 +7,21 @@ https://www.openshift.com/app/account/new
 https://blog.openshift.com/day-27-restify-build-correct-rest-web-services-in-nodejs/
 http://thejackalofjavascript.com/nodejs-restify-mongolab-build-rest-api/
 
+heroku:
+heroku login
 
+
+ heroku git:remote -a browsertrack
+git remote heroku to https://git.heroku.com/browsertrack.git
+git push heroku master
 
 mLab: 
 
 mongo shell:
 mongo ds023704.mlab.com:23704/browsertrack -u dbuser -p "(*YH(OJH32"
+
+git: 
+git init
 
 
 DB:

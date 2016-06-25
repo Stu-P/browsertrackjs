@@ -1,0 +1,34 @@
+{
+  "name": "browsertrack",
+  "version": "0.2.5",
+  "description": "Site for testing",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "WebAPI/index.js",
+  "scripts": {
+    "start": "node WebAPI/index.js"
+  },
+  "dependencies": {
+    "restify": "4.0.4",
+    "restify-cors-middleware": "0.0.6",
+    "request":"2.72.0",
+    "mongoose":"4.5.1",
+    "swagger-restify": "1.0.1",
+    "dtrace-provider": "0.6.0",
+	  "body-parser": "1.15.0",
+    "cors": "2.7.1",
+	  "express": "4.13.4",
+    "oauth2-server": "2.4.1"   
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/browsertrack.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

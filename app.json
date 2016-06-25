@@ -1,0 +1,6 @@
+{
+  "name": "Browsertrack",
+  "description": "An API and Angular site for tracking current browser versions",
+  "keywords": ["node", "static"],
+  "image": "heroku/nodejs"
+}
