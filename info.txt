@@ -15,6 +15,10 @@ heroku login
 git remote heroku to https://git.heroku.com/browsertrack.git
 git push heroku master
 
+
+https://www.airpair.com/heroku/posts/heroku-tips-and-hacks
+
+
 mLab: 
 
 mongo shell:
