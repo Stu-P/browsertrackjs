@@ -1,0 +1,82 @@
+﻿<section layout="column" flex id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+
+    <md-card>
+        <md-toolbar layout-align="center center" class="card-toolbar md-primary md-hue-1">
+            <p class="card-header">Current browser versions</p>
+        </md-toolbar>
+        <md-card-content>
+            <div layout="row" layout-sm="column" layout-align="space-around" data-ng-show="vm.isBusy">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <div flex class="BrowserGridList">
+
+                <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="4"
+                              md-row-height-gt-md="1:1" md-row-height="2:2"
+                              md-gutter="12px" md-gutter-gt-sm="8px">
+
+                    <md-grid-tile ng-click="vm.openRightPanel(b)" class={{b.name}} data-ng-repeat="b in vm.browsers">
+                        <md-grid-tile-header><h3>{{b.name}} - {{b.os}}</h3></md-grid-tile-header>
+                        <img ng-src='{{ vm.getIcon(b.name) }}' class="dashboard-browser-image" />
+                        <md-grid-tile-footer>
+                            <h3>Version: {{b.currentVersion}}</h3>
+                        </md-grid-tile-footer>
+                    </md-grid-tile>
+                </md-grid-list>
+            </div>
+            <!--</div>-->
+
+        </md-card-content>
+    </md-card>
+
+    <!--vm.showOverdueScanWarning-->
+    <md-fab-toolbar md-open="vm.isWarningOpen" count="0" md-direction="left" data-ng-show="vm.showOverdueScanWarning">
+        <md-fab-trigger class="align-with-text">
+            <md-button id="warning-button" aria-label="menu" class="md-fab md-accent md-hue-8">
+                <md-icon md-svg-src="Content/images/ic_warning_48px.svg" style="padding-bottom: 5px"></md-icon>
+            </md-button>
+        </md-fab-trigger>
+
+        <md-toolbar class="md-accent md-hue-8" id="warning-panel">
+            <md-fab-actions class="md-toolbar-tools">
+                <h1>Warning: version scan overdue for one or more browsers</h1>
+            </md-fab-actions>
+        </md-toolbar>
+    </md-fab-toolbar>
+
+
+
+            <!--<h4>Test Results</h4>
+            <a href="jasmine/specrunner.html" target="_blank">Jasmine Unit tests</a><br />
+            <a href="uitests/#/" target="_blank">Specflow / Selenium UI tests</a>-->
+            
+
+
+
+    <!--right panel-->
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Status</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <form>
+                <md-input-container>
+
+                    <h5 id="rp-browser">{{vm.selectedBrowser.name}} - {{vm.selectedBrowser.os}}</h5>
+                    <p id="rp-check-date" class="md-body-2">Last checked: {{vm.selectedBrowser.lastVersionCheck | date:"dd/MM/yyyy 'at' h:mma"}}</p>
+                    <md-switch id="rp-update-switch" ng-model="vm.selectedBrowser.versionCheckEnabled" ng-change="vm.updateBrowser()" ng-disabled="!vm.authentication.isAuth" aria-label="version checks">
+                        Version checking
+                    </md-switch>
+                </md-input-container>
+            </form>
+            <md-button id="rp-close" ng-click="vm.closeRightPanel()" class="md-primary">
+                Close
+            </md-button>
+        </md-content>
+    </md-sidenav>
+
+
+
+
+</section>
+
+

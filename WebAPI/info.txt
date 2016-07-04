@@ -1,0 +1,8 @@
+git remote add github https://github.com/Stu-P/browsertrackjs.git
+git push -u github master
+
+git push -u github heroku
+
+
+
+https://www.mongodb.com/blog/post/building-your-first-application-mongodb-creating-rest-api-using-mean-stack-part-2

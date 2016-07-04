@@ -85,6 +85,7 @@ function Server() {
         swagger.init(server, {
             swagger: '2.0',
             baseUrl: '/',
+            rootUrl: "http://localhost:5000/",
             basePath:'http://localhost:5000/',
             info: {
                 version: 'v1',

@@ -1,0 +1,20 @@
+﻿<div flex layout-fill layout="column"  data-ng-controller="shell as vm">
+    <header class="clearfix" data-ng-include="'app/layout/topnav.html'">
+        <!--<div data-ng-include="'/app/layout/topnav.html'"></div>-->
+    </header>
+    <section id="content" class="content">
+        <!--<div data-ng-show="vm.isBusy" class="page-splash dissolve-animation">
+            <div data-cc-spinner="vm.spinnerOptions"></div>
+            <div class="page-splash-message page-splash-message-subtle">{{vm.busyMessage}}</div>
+        </div>-->
+
+        <div flex layout="row">
+            <div data-ng-include="'app/layout/sidebar.html'"></div>
+
+            <div flex layout="column">
+                <div id="templateArea" flex data-ng-view class="shuffle-animation">
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>

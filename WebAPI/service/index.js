@@ -33,5 +33,15 @@ module.exports = {
             var instance = new Services();
             resolve(instance);
         });
+    },
+        put: () => {
+        if (servicesInstance) {
+            return Promise.resolve(servicesInstance);
+        }
+
+        return new Promise(resolve => {
+            var instance = new Services();
+            resolve(instance);
+        });
     }
 };

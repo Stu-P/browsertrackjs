@@ -1,0 +1,40 @@
+﻿
+<section layout="column" flex id="login-view" class="mainbar" data-ng-controller="signup as vm">
+    <md-card>
+        <md-toolbar layout-align="center center" class="card-toolbar md-primary md-hue-1">
+            <p class="card-header">Create Account</p>
+        </md-toolbar>
+        <md-card-content>
+            <div layout="row" layout-sm="column" layout-align="space-around" data-ng-show="vm.isBusy">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <form name='signupform' data-ng-show="!vm.isBusy">
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model=" vm.registration.email" id="email" type="email" ng-required="true">
+                </md-input-container>
+                <md-input-container>
+                    <label>Username</label>
+                    <input ng-model=" vm.registration.userName" id="user" type="text" ng-required="true">
+                </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model=" vm.registration.password" id="pass" type="password" ng-required="true">
+                </md-input-container>
+                <md-input-container>
+                    <label>Confirm Password</label>
+                    <input ng-model=" vm.registration.confirmPassword" id="confirm-pass" type="password" ng-required="true">
+                </md-input-container>
+                <div layout="row" layout-align="end center">
+                    <md-button ng-disabled="signupform.$invalid" class="md-raised md-primary" id="submit" data-ng-click="vm.signUp()">Register</md-button>
+                </div>
+                <md-toolbar data-ng-hide="vm.message == ''" layout-align="center center" data-ng-class="(vm.savedSuccessfully) ? 'form-result-toolbar form-success' : 'form-result-toolbar form-fail'">
+                    <p class="validation-result">{{vm.message}}</p>
+                </md-toolbar>
+
+            </form>
+
+        </md-card-content>
+    </md-card>
+
+</section>

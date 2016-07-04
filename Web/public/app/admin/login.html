@@ -1,0 +1,31 @@
+﻿
+<section layout="column" flex id="login-view" class="mainbar" data-ng-controller="login as vm">
+    <md-card>
+        <md-toolbar layout-align="center center" class="card-toolbar md-primary md-hue-1">
+            <p class="card-header">Log in</p>
+        </md-toolbar>
+        <md-card-content>
+            <div layout="row" layout-sm="column" layout-align="space-around" data-ng-show="vm.isBusy">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+            <form name='loginform' data-ng-show="!vm.isBusy">
+                <md-input-container>
+                    <label>Username</label>
+                    <input ng-model="vm.loginData.userName" id="user" ng-required="true" type="text">
+                </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="vm.loginData.password" id="pass" ng-required="true" type="password">
+                </md-input-container>
+                <div layout="row" layout-align="end center">
+                    <md-button ng-disabled="loginform.$invalid" id="submit" class="md-raised md-primary " data-ng-click="vm.login()">Log in</md-button>
+                </div>
+            </form>
+            <md-toolbar data-ng-hide="vm.message == ''" layout-align="center center" class="form-result-toolbar form-fail">
+                <p class="validation-result">{{vm.message}}</p>
+            </md-toolbar>
+
+        </md-card-content>
+    </md-card>
+
+</section>

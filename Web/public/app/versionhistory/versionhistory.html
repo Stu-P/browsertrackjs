@@ -1,0 +1,26 @@
+﻿<section  id="versionhistory-view" data-ng-controller="versionhistory as vm">
+    <md-card>
+        <md-toolbar layout-align="center center" class="card-toolbar md-primary md-hue-1">
+            <p class="card-header">History of version changes</p>
+        </md-toolbar>
+        <md-card-content>
+            <md-content>
+                <md-list>
+                    <div layout="row" layout-sm="column" layout-align="space-around" data-ng-show="vm.isBusy" >
+                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                    </div>
+                    <md-list-item data-ng-repeat="v in vm.versionHistory">
+                        <md-divider></md-divider>
+                        <div layout="row" layout-align="start center">
+                            <img ng-src='{{ vm.getIcon(v.browserName) }}' class="browser-history-icon" alt="avatar"/>
+
+                            <h5>{{ v.dateOfChange | date:'dd/MM/yyyy'}} - Changed to {{ v.newVersion }} from {{ v.priorVersion }} </h5>
+                          
+                        </div>
+
+                    </md-list-item>
+            </md-content>
+        </md-card-content>
+    </md-card>
+
+</section>

@@ -1,0 +1,91 @@
+﻿<!--<div data-cc-sidebar data-ng-controller="sidebar as vm">
+    <div class="sidebar-filler"></div>
+    <div class="sidebar-dropdown"><a href="#">Menu</a></div>
+    <div class="sidebar-inner">
+        <div class="sidebar-widget">
+        </div>
+        <ul class="navi">
+            <li class="nlightblue fade-selection-animation" data-ng-class="vm.isCurrent(r)"
+                data-ng-repeat="r in vm.navRoutes">
+                <a href="#{{r.url}}" data-ng-bind-html="r.config.settings.content"></a>
+            </li>
+        </ul>
+    </div>
+</div>-->
+<!--<div layout="column" flex data-ng-controller="sidebar as vm">-->
+<div data-ng-controller="sidebar as vm">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" ng-click="toggleSidenav('left')">
+
+        <md-content flex>
+            <md-toolbar layout-align="center center" class="card-toolbar md-primary md-hue-1">
+                <p>Menu</p>
+            </md-toolbar>
+
+            <!--<md-list>
+                <md-subheader class="md-no-sticky">Menu</md-subheader>
+                <md-item data-ng-class="vm.isCurrent(r)" data-ng-repeat="r in vm.navRoutes">
+                    <md-button md-no-ink class="md-primary" href="#{{r.url}}" data-ng-bind-html="r.config.settings.content"></md-button>
+                </md-item>
+
+            </md-list>-->
+            <div layout="column" hide-gt-sm flex data-ng-hide="!vm.authentication.isAuth">
+                <div layout="row" style="width: 100%; margin-top:20px;text-align:center;" flex>
+                    <span flex>Welcome {{vm.authentication.userName}}</span>
+                </div>
+                <md-button class="md-primary md-raised" href="#/" data-ng-click="vm.logOut(true)">Log Out</md-button>
+            </div>
+
+            <ul style="list-style-type:none; padding-left: 0">
+
+
+                <!--<li data-ng-class="vm.isCurrent(r)"
+                    data-ng-repeat="r in vm.navRoutes">
+                    <div layout="row" style="width: 100%">
+                        <md-button md-no-ink class="md-primary" flex href="#{{r.url}}" data-ng-bind-html="r.config.settings.content"></md-button>
+                    </div>
+                </li>-->
+                <li>
+                    <div layout="row" style="width: 100%">
+                        <md-button  class="md-primary" flex href="#/">Dashboard</md-button>
+                    </div>
+                </li>
+                <li>
+                    <div layout="row" style="width: 100%">
+                        <md-button  class="md-primary" flex href="#/versionhistory">Version History</md-button>
+                    </div>
+                </li>
+                <li data-ng-hide="!vm.authentication.isAuth">
+                    <div layout="row" style="width: 100%">
+                        <md-button class="md-primary" flex href="#/contact">Contact</md-button>
+                    </div>
+                </li>
+
+            </ul>
+
+            <!---->
+            <div layout="column" hide-gt-sm data-ng-hide="vm.authentication.isAuth">
+                <md-button class="md-primary md-raised" href="#login">Log in</md-button>
+                <md-button class="md-raised" href="#signup">Sign up</md-button>
+            </div>
+            <hr>
+            <div style="width: 100%;  margin-top:10px; margin-bottom:20px;text-align:center;">
+                <h4>Test Results</h4>
+                <ul style="list-style-type:none; padding-left: 0">
+                    <li>
+                        <!--<div layout="row" style="width: 100%">-->
+                            <a href="jasmine/specrunner.html" target="_blank">Jasmine Unit tests</a>
+                          <!--  <md-button md-no-ink class="md-primary" flex  href="jasmine/specrunner.html" target="_blank">Jasmine Unit tests</md-button>-->
+                        <!--</div>-->
+                    </li>
+                    <br>
+                    <li>
+                        <!--<div layout="row" style="width: 100%">-->
+                            <a href="uitests/#/" target="_blank">Specflow / Selenium UI tests</a>
+                           <!-- <md-button md-no-ink class="md-primary" flex href="uitests/#/" target="_blank">Specflow / Selenium UI tests</md-button>-->
+                        <!--</div>-->
+                    </li>
+                </ul>
+            </div>
+        </md-content>
+    </md-sidenav>
+</div>

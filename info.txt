@@ -19,6 +19,9 @@ git push heroku master
 https://www.airpair.com/heroku/posts/heroku-tips-and-hacks
 
 
+scrapper:
+https://devcenter.heroku.com/articles/scheduler
+
 mLab: 
 
 mongo shell:

@@ -1,0 +1,138 @@
+﻿/*.toolbardemoScrollShrink .face {
+  width: 48px;
+  margin: 16px;
+  border-radius: 48px;
+  border: 1px solid #ddd; 
+
+}*/
+
+md-toolbar h1 {
+  margin: auto;
+    font-size: 1.250em;
+  font-weight: 400;
+}
+
+.card-toolbar {
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
+}
+
+.form-result-toolbar {
+    height: 40px;
+    max-height: 40px;
+    min-height: 40px;
+    font-size: 15px;
+    margin-top: 15px;
+
+}
+
+md-toolbar.form-success {
+    background-color: rgb(104, 189, 88);
+}
+
+md-toolbar.form-fail {
+    background-color: rgb(230, 98, 88);
+}
+
+  md-sidenav  md-list {
+    padding: 0 0 8px 0;
+  }
+
+  #templateArea  {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0;
+}
+
+
+
+
+  .BrowserGridList md-grid-list {
+  margin: 8px; }
+.BrowserGridList .amber {
+  background: #ffc107; }
+.BrowserGridList .IE {
+  background: #b9f6ca; }
+.BrowserGridList .Firefox {
+  background: #ffff8d; }
+.BrowserGridList .blue {
+  background: #84ffff; }
+.BrowserGridList .Safari {
+  background: #b388ff; }
+.BrowserGridList .Chrome {
+  background: #ff8a80; }
+.BrowserGridList md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+
+md-grid-tile md-icon  {
+  margin: 20px;
+  margin-top: 0;
+  width: 64px;
+  height: 64px; 
+
+}
+
+
+
+img.dashboard-browser-image {
+    max-width:60%;
+    width:50%;
+
+}
+
+img.success-image{
+        max-width:400px;
+    width:70%;
+}
+
+img.browser-history-icon {
+    margin: 5px 10px 5px 5px;
+    max-height:30px;
+    max-width:30px;
+}
+
+
+/*md-icon svg {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+md-grid-list {
+  margin: 8px;
+
+}
+
+.s64 {
+  font-size:64px;
+}
+
+.s32 {
+  
+  font-size:48px;
+
+}
+
+md-icon.fa {
+  display:block;
+  padding-left:0px;
+}
+
+md-icon.s32 span {
+  padding-left:8px;
+}
+
+md-grid-tile {
+  -webkit-transition: all 500ms ease-out 100ms;
+    -moz-transition: all 500ms ease-out 100ms;
+    -o-transition: all 500ms ease-out 100ms;
+    transition: all 500ms ease-out 100ms;
+}
+
+md-grid-tile md-grid-tile-footer {
+  background:  rgba(0,0,0,.68);
+  height: 36px;
+  
+}*/
