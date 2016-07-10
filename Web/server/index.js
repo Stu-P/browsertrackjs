@@ -51,7 +51,6 @@ function Server() {
    
     app.use(express.static(mypath));
 
-
         // Configure the database to use PostgreSQL or Mongodb
         database.configure(config.db.connectionString);
 
