@@ -5,19 +5,13 @@
   "engines": {
     "node": "5.9.1"
   },
-  "main": "WebAPI/index.js",
+  "main": "Web/index.js",
   "scripts": {
-    "start": "node WebAPI/index.js"
+    "start": "node Web/index.js"
   },
   "dependencies": {
-    "restify": "4.0.4",
-    "restify-cors-middleware": "0.0.6",
-    "request":"2.72.0",
     "mongoose":"4.5.1",
-    "swagger-restify": "github:vellotis/swagger-restify",
-    "dtrace-provider": "0.6.0",
 	"body-parser": "1.15.0",
-    "cors": "2.7.1",
 	"express": "4.13.4",
 	"express-oauth-server": "github:Stu-P/express-oauth-server"	
   },

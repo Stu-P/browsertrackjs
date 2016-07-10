@@ -30,16 +30,26 @@ function Server() {
         // Create a new express instance
         app = express();
 
+
         // Add the urlencoded parser middleware for express: https://github.com/expressjs/body-parser#bodyparserurlencodedoptions
         app.use(bodyParser.urlencoded({ extended: false }));
 
         // Add the json parser middleware for express: https://github.com/expressjs/body-parser#bodyparserjsonoptions
         app.use(bodyParser.json());
 
+
+        // Initialize all controllers
+      app.use('*', function (req, res, next) {
+            console.log(JSON.stringify(req.body));
+            next();
+        });
+
         // AngularJS website
-        app.use(express.static('./web/public'));
+       app.use(express.static('./web/public'));
 
-
+    //      app.post("/test", function (req, res) {
+   //           res.status(200).json(JSON.stringify(req.body));
+   //       });
 
         // Configure the database to use PostgreSQL or Mongodb
         database.configure(config.db.connectionString);
@@ -49,38 +59,24 @@ function Server() {
 
         // Add oauth support
         var oauth = new OAuthServer({
-            model: require('./oAuthModel'),
+            model: require('../database/mongo/oAuthModel'),
             grants: ['password'],
             debug: true
         });
 
-        router.use(oauth.authenticate());
-
-
+       // router.use(oauth.authenticate());
 
         app.all('/oauth/token', oauth.token());
 
 
         // Initialize all controllers
-        router.get('/', function (req, res) {
+ /*       router.get('/', function (req, res) {
             res.json({ message: 'hooray! welcome to our api!' });
         });
-
-        controllers.initialize(router);
+*/
+        controllers.initialize(router, oauth.authenticate());
 
         app.use('/api', router);
-
-        app.get('/auth', function (req, res) {
-            if(res.status != 401)
-            res.send('secret area');
-            //  res.status(200).json('secret area');
-
-        });
-
-
-
-
-        //      app.use(app.oauth.errorHandler());
 
         app.listen(port, () => console.log(`WEB is up and running on port ${port}.`));
     };

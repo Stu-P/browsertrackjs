@@ -10,7 +10,7 @@ const services = require('../service');
 function ChangeHistoryController() {
     this.initialize = function (server) {
         // Define a HTTP GET route which will execute "handleCustomerList"
-        server.get('/changehistory/list', handleChangeHistoryList);
+        server.get('/changehistory/list',  handleChangeHistoryList);
 
         // Define a HTTP POST route
         server.post('/changehistory', handleChangeHistoryAdd);

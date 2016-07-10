@@ -1,1 +1,1 @@
-web: node WebAPI/index.js
+web: node Web/index.js

@@ -14,7 +14,7 @@
         vm.isBusy = false;
 
         vm.registration = {
-            userName: "",
+            username: "",
             password: "",
             confirmPassword: "",
             email: ""

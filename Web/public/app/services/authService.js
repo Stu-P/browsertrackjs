@@ -11,7 +11,9 @@
 
         var logSuccess = common.logger.getLogFn(serviceId, 'success');
 
-
+        var clientId = "browsertrackweb";
+        var clientSecret = "45%26g87g%5Ef%25f";
+    
         var authentication = {
             isAuth: false,
             userName: ""
@@ -32,23 +34,22 @@
 
             logOut();
 
-            return $http.post(serviceBase + 'account/register', registration).then(function (response) {
+            return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
                 return response;
             });
         }
 
         function login(loginData) {
 
-            var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
-
+            var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password + "&client_id=" + clientId+ "&client_secret=" + clientSecret ;
             var deferred = $q.defer();
 
-            $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+            $http.post(serviceBase + 'oauth/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 
-                localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
+                localStorageService.set('authorizationData', { token: response.access_token, username: loginData.username });
 
                 authentication.isAuth = true;
-                authentication.userName = loginData.userName;
+                authentication.username = loginData.username;
 
                 deferred.resolve(response);
 
@@ -70,14 +71,14 @@
             localStorageService.remove('authorizationData');
 
             authentication.isAuth = false;
-            authentication.userName = "";
+            authentication.username = "";
         }
 
         function fillAuthData() {
             var authData = localStorageService.get('authorizationData');
             if (authData) {
                 authentication.isAuth = true;
-                authentication.userName = authData.userName;
+                authentication.username = authData.username;
             }
 
         }

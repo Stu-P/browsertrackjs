@@ -8,10 +8,10 @@ const services = require('../service');
  * @constructor
  */
 function BrowserController() {
-    this.initialize = function (server) {
+    this.initialize = function (server, auth) {
         // Define a HTTP GET route which will execute "handleCustomerList"
         server.get('/browsers', handleBrowsersGet);
-        server.put('/browsers', handleBrowsersPut);
+        server.put('/browsers', auth, handleBrowsersPut);
 
 
     }
@@ -34,14 +34,14 @@ function handleBrowsersGet(req, res) {
 
 function handleBrowsersPut(req, res) {
     
-    services.put()
-        .then(srv => srv.browser.update(JSON.parse(req.body)))
+    services.get()
+        .then(srv => srv.browser.update(req.body))
         .then(
         // Successful handler: Return a json
-        browser => res.json(200, browser),
+        browser => res.status(200).json(browser),
 
         // Error handler: Send a HTTP status code 500 together with the error
-        err => res.json(500, err)
+        err => res.status(500).json(err)
         );
 }
 

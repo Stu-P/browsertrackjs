@@ -14,7 +14,7 @@
 
         vm.message = "";
         vm.loginData = {
-            userName: "",
+            username: "",
             password:""
         };
 

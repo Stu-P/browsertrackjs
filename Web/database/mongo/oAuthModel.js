@@ -30,12 +30,14 @@ mongoose.model('OAuthClients', new Schema({
 mongoose.model('OAuthUsers', new Schema({
   email: { type: String },
   password: { type: String },
-  username: { type: String }
+  username: { type: String ,unique : true, required : true, dropDups: true }
 }));
 
 var OAuthTokensModel = mongoose.model('OAuthTokens');
 var OAuthClientsModel = mongoose.model('OAuthClients');
 var OAuthUsersModel = mongoose.model('OAuthUsers');
+
+module.exports = OAuthUsersModel;
 
 /**
  * Get access token.

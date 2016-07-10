@@ -18,7 +18,7 @@ function BrowserService() {
 
 
     this.update = (updatedBrowser) => {
-     //   console.log("Update browser: " + util.inspect(updatedBrowser, { colours: true }));
+        console.log("Update browser: " + util.inspect(updatedBrowser, { colours: true }));
 
         var query = {_id:updatedBrowser._id };
         return Browser.findOneAndUpdate(query, updatedBrowser, {new : true});

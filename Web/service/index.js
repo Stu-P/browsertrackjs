@@ -2,7 +2,9 @@
 
 const globalConfig = require('../config'),
     versionChangeDatabaseService = require(`./versionchange.mongo`),
+    accountDatabaseService = require(`./account.mongo`),
 	browserDatabaseService = require(`./browser.mongo`);
+
 
 let config = {};
 
@@ -13,6 +15,7 @@ let config = {};
 function Services() {
     this.versionchange = versionChangeDatabaseService;
     this.browser = browserDatabaseService;
+    this.account = accountDatabaseService;
 }
 
 let servicesInstance;
