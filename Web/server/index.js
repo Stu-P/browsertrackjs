@@ -45,7 +45,10 @@ function Server() {
         });
 */
         // AngularJS website
-       app.use(express.static('./web/public'));
+      // app.use(express.static('./Web/public'));
+       //')
+       var mypath = path.join(__dirname, '../public');
+ app.use(express.static(mypath));
 
         // Configure the database to use PostgreSQL or Mongodb
         database.configure(config.db.connectionString);
