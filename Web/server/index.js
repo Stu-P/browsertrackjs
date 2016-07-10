@@ -50,8 +50,6 @@ function Server() {
        var mypath = path.join(__dirname, '../public');
    
     app.use(express.static(mypath));
-    app.use('/scripts', express.static(path.join(mypath,'/scripts')));
-    app.use('/content', express.static(path.join(mypath,'/content')));
 
         // Configure the database to use PostgreSQL or Mongodb
         database.configure(config.db.connectionString);
