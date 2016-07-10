@@ -39,17 +39,18 @@ function Server() {
 
 
         // Initialize all controllers
-      app.use('*', function (req, res, next) {
+/*      app.use('*', function (req, res, next) {
             console.log(JSON.stringify(req.body));
             next();
         });
-
+*/
         // AngularJS website
        app.use(express.static('./web/public'));
 
-    //      app.post("/test", function (req, res) {
-   //           res.status(200).json(JSON.stringify(req.body));
-   //       });
+       app.get('/', function(req, res) {
+
+        res.render('index');
+    });
 
         // Configure the database to use PostgreSQL or Mongodb
         database.configure(config.db.connectionString);
