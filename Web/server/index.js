@@ -47,11 +47,6 @@ function Server() {
         // AngularJS website
        app.use(express.static('./web/public'));
 
-       app.get('/', function(req, res) {
-
-        res.render('index.html');
-    });
-
         // Configure the database to use PostgreSQL or Mongodb
         database.configure(config.db.connectionString);
 
