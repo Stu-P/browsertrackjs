@@ -49,7 +49,7 @@ function Server() {
 
        app.get('/', function(req, res) {
 
-        res.render('index');
+        res.render('index.html');
     });
 
         // Configure the database to use PostgreSQL or Mongodb
