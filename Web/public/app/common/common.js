@@ -138,19 +138,19 @@
                 switch (name) {
                     case "Chrome":
                         //imageUri = "../../Content/images/chrome-android.svg";
-                        imageUri = "./Content/images/chrome_256x256.png";
+                        imageUri = "./content/images/chrome_256x256.png";
                         break;
                     case "Safari":
                         //imageUri = "../../Content/images/safari-ios.svg";
-                        imageUri = "./Content/images/safari_256x256.png";
+                        imageUri = "./content/images/safari_256x256.png";
                         break;
                     case "IE":
                         //imageUri = "../../Content/images/internet-explorer-tile.svg";
-                        imageUri = "./Content/images/internet-explorer_256x256.png";
+                        imageUri = "./content/images/internet-explorer_256x256.png";
                         break;
                     case "Firefox":
                         //imageUri = "../../Content/images/firefox.svg";
-                        imageUri = "./Content/images/firefox_256x256.png";
+                        imageUri = "./content/images/firefox_256x256.png";
                         break;
                 }
                 return imageUri;
